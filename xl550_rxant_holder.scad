@@ -1,3 +1,6 @@
+//author: Roman 'krpec' Dittrich (dittrich.r@gmail.com)
+//XL550 antenna holder, version 1.0
+
 $fa = 1;
 $fs = 0.1;
 
