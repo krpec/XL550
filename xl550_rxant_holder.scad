@@ -6,10 +6,10 @@ $fs = 0.1;
 
 //zip tie ring
 module zip_tie_slot(x = 0) {
-    difference() {
+    #difference() {
         translate([x, 0, 0])
             rotate([90, 0, 90])
-                cylinder(h = 4, r = 12, center = true);
+                cylinder(h = 4, r = 12.25, center = true);
         
         translate([x, 0, 0])
             rotate([90, 0, 90])
@@ -26,12 +26,12 @@ module rx_holder_base() {
                     cube([20, 22, 10], center = true);  
 
                 rotate([90, 0, 90])    
-                    cylinder(h = 20, r = 11, center = true);
+                    cylinder(h = 20, r = 12, center = true);
             }
 
             intersection() {
                 translate([0, 0, 6])
-                    cube([20, 18, 13], center = true);
+                    cube([20, 18, 14], center = true);
           
                 rotate([90, 0, 90])
                     cylinder(h = 20, r = 14, center = true);
@@ -49,11 +49,11 @@ module rx_ant_guide_in() {
     difference(){
         intersection() {
             translate([-6, 0, 14])
-                cube([8, 6, 3], center = true);
+                cube([8, 7, 3], center = true);
             
             translate([-6, 0, 12.5])
                 rotate([90, 0, 90])
-                    cylinder(h = 8, r = 3, center = true);
+                    cylinder(h = 8, r = 3.5, center = true);
         }
 
         translate([-6, 1.25, 13.5])
