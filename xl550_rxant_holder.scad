@@ -1,5 +1,5 @@
 //author: Roman 'krpec' Dittrich (dittrich.r@gmail.com)
-//XL550 antenna holder, version 1.0
+//XL550 antenna holder, version 1.1
 
 $fa = 1;
 $fs = 0.1;
@@ -31,7 +31,7 @@ module rx_holder_base() {
 
             intersection() {
                 translate([0, 0, 6])
-                    cube([20, 18, 12], center = true);
+                    cube([20, 18, 13], center = true);
           
                 rotate([90, 0, 90])
                     cylinder(h = 20, r = 14, center = true);
@@ -47,14 +47,24 @@ module rx_holder_base() {
 //rx ant 1st part
 module rx_ant_guide_in() {
     difference(){
-        translate([-6, 0, 13])
-            cube([8, 5.5, 2.75], center = true);
+        intersection() {
+            translate([-6, 0, 14])
+                cube([8, 6, 3], center = true);
+            
+            translate([-6, 0, 12.5])
+                rotate([90, 0, 90])
+                    cylinder(h = 8, r = 3, center = true);
+        }
 
-        translate([-6, 1.25, 13])
-            cube([10, 2, 2], center = true);
+        translate([-6, 1.25, 13.5])
+            //cube([10, 2, 2], center = true);
+            rotate([90, 0, 90])
+                cylinder(h = 10, r = 1, center = true);
 
-        translate([-6, -1.25, 13])
-            cube([10, 2, 2], center = true);
+        translate([-6, -1.25, 13.5])
+            //cube([10, 2, 2], center = true);
+            rotate([90, 0, 90])
+                cylinder(h = 10, r = 1, center = true);
     }
 }
 
@@ -69,11 +79,11 @@ module rx_ant_guide_tube() {
 }
 
 module rx_ant_guide_out() {
-    translate([8, 8, 13])
+    translate([8, 8, 13.5])
         rotate([0, 0, 45])
             rx_ant_guide_tube();
 
-    translate([8, -8, 13])
+    translate([8, -8, 13.5])
         rotate([0, 0, -45])
             rx_ant_guide_tube();
 }
