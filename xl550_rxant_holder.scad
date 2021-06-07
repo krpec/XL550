@@ -1,12 +1,12 @@
 //author: Roman 'krpec' Dittrich (dittrich.r@gmail.com)
-//XL550 antenna holder, version 1.1
+//XL550 antenna holder, version 1.2
 
 $fa = 1;
 $fs = 0.1;
 
 //zip tie ring
 module zip_tie_slot(x = 0) {
-    #difference() {
+    difference() {
         translate([x, 0, 0])
             rotate([90, 0, 90])
                 cylinder(h = 4, r = 12.25, center = true);
@@ -48,42 +48,42 @@ module rx_holder_base() {
 module rx_ant_guide_in() {
     difference(){
         intersection() {
-            translate([-6, 0, 14])
-                cube([8, 7, 3], center = true);
+            translate([-6, 0, 15])
+                cube([8, 9, 5], center = true);
             
-            translate([-6, 0, 12.5])
+            translate([-6, 0, 13.5])
                 rotate([90, 0, 90])
-                    cylinder(h = 8, r = 3.5, center = true);
+                    cylinder(h = 8, r = 4.5, center = true);
         }
 
-        translate([-6, 1.25, 13.5])
+        translate([-6, 2, 14.5])
             //cube([10, 2, 2], center = true);
             rotate([90, 0, 90])
-                cylinder(h = 10, r = 1, center = true);
+                cylinder(h = 10, r = 1.5, center = true);
 
-        translate([-6, -1.25, 13.5])
+        translate([-6, -2, 14.5])
             //cube([10, 2, 2], center = true);
             rotate([90, 0, 90])
-                cylinder(h = 10, r = 1, center = true);
+                cylinder(h = 10, r = 1.5, center = true);
     }
 }
 
 module rx_ant_guide_tube() {
     difference() {
         rotate([90, 0, 90])
-            cylinder(h = 15, r = 2, center = true);
+            cylinder(h = 15, r = 3, center = true);
 
         rotate([90, 0, 90])
-            cylinder(h = 17, r = 1, center = true);
+            cylinder(h = 17, r = 2, center = true);
     }
 }
 
 module rx_ant_guide_out() {
-    translate([8, 8, 13.5])
+    translate([8, 8, 14.5])
         rotate([0, 0, 45])
             rx_ant_guide_tube();
 
-    translate([8, -8, 13.5])
+    translate([8, -8, 14.5])
         rotate([0, 0, -45])
             rx_ant_guide_tube();
 }
