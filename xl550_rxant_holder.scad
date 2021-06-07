@@ -1,5 +1,5 @@
 //author: Roman 'krpec' Dittrich (dittrich.r@gmail.com)
-//XL550 antenna holder, version 1.2
+//XL550 antenna holder, version 1.3
 
 $fa = 1;
 $fs = 0.1;
@@ -23,7 +23,7 @@ module rx_holder_base() {
         union() {
             intersection() {
                 translate([0, 0, 5])
-                    cube([20, 22, 10], center = true);  
+                    cube([20, 22, 15], center = true);  
 
                 rotate([90, 0, 90])    
                     cylinder(h = 20, r = 12, center = true);
@@ -49,22 +49,22 @@ module rx_ant_guide_in() {
     difference(){
         intersection() {
             translate([-6, 0, 15])
-                cube([8, 9, 5], center = true);
+                cube([8, 11, 5], center = true);
             
             translate([-6, 0, 13.5])
                 rotate([90, 0, 90])
-                    cylinder(h = 8, r = 4.5, center = true);
+                    cylinder(h = 8, r = 6, center = true);
         }
 
-        translate([-6, 2, 14.5])
+        translate([-6, 2.5, 14.5])
             //cube([10, 2, 2], center = true);
             rotate([90, 0, 90])
-                cylinder(h = 10, r = 1.5, center = true);
+                cylinder(h = 10, r = 2, center = true);
 
-        translate([-6, -2, 14.5])
+        translate([-6, -2.5, 14.5])
             //cube([10, 2, 2], center = true);
             rotate([90, 0, 90])
-                cylinder(h = 10, r = 1.5, center = true);
+                cylinder(h = 10, r = 2, center = true);
     }
 }
 
